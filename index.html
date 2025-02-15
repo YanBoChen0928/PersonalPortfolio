@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/09c15b7369.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <!-- 
+      Web App Manifest - for PWA functionality
+      Enable this when website needs to be installed as a mobile app
+    -->
+    <!-- <link rel="manifest" href="images/site.webmanifest" /> -->
+  </head>
+  <body class="home-page">
+    <header>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/education.html">Education</a></li>
+          <li><a href="pages/hobbies.html">Hobbies</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Welcome to My Portfolio</h1>
+
+      <section id="about">
+        <figure class="profile-image">
+          <img
+            src="https://lh3.googleusercontent.com/pw/ABLVV87aIvjMfpDt_f3lPM8A58TFDHFd1WlreyzbtjZ3qidfzydLJhsHcMszNxbcqSygj932Uq3EcfHU3iHAlIDYt59GquKuINVDkhspuS5ZCKDH9f6bf4Z9hyGReOhyr0jNf2o8Z6XLW4stBTdEf0fGYb4Fjw=w1200-h1200-s-no?authuser=0"
+            alt="Yan-Bo Chen's ID photo"
+          />
+          <figcaption>
+            Yanbo Chen is an individual who consistently seeks to explore and
+            challenge himself at various stages, and becomes greatly excited by
+            encountering impressive and admirable individuals and phenomena.
+          </figcaption>
+        </figure>
+
+        <div class="text-wrapper">
+          <div class="about-content">
+            <h2>About Me</h2>
+            <div class="about-text">
+              <div class="timeline-nav">
+                <a href="#medical" class="active">Medical Experience</a>
+                <a href="#cs">Computer Science</a>
+                <a href="#international">International Travel</a>
+                <a href="#engagement">Public Engagement</a>
+              </div>
+
+              <div id="medical" class="timeline-section">
+                <h3>Medical and Professional Experience</h3>
+                <div class="timeline">
+                  <div class="timeline-items">
+                    <!-- Timeline items in chronological order -->
+                    <div class="timeline-item">
+                      <span class="date">2004-2011</span>
+                      <h4>Medical Education and Training</h4>
+                      <ul>
+                        <li>
+                          Enrolled in School of Medicine at National Yang Ming
+                          Chiao Tung University
+                        </li>
+                        <li>
+                          Acquired systematic knowledge through problem-based
+                          learning (PBL)
+                        </li>
+                        <li>
+                          Completed clerkship at Taipei Veterans General
+                          Hospital (2009-2010)
+                        </li>
+                        <li>
+                          Internship at multiple hospitals across Taiwan
+                          (2010-2011)
+                        </li>
+                        <li>
+                          Graduated and passed Taiwan National Medical Licensing
+                          Examination (2011)
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="date">2012-2018</span>
+                      <h4>Clinical Training and Residency</h4>
+                      <ul>
+                        <li>
+                          Military general physician during mandatory service
+                          (2012-2013)
+                        </li>
+                        <li>
+                          Completed general residency at Fengyuan Hospital
+                          (2013-2014)
+                        </li>
+                        <li class="highlight-background">
+                          Anesthesiology residency at Kaohsiung Veterans General
+                          Hospital (2014-2018)
+                        </li>
+                        <li class="highlight-background">
+                          Served as Chief Resident and Administrative Teaching
+                          Officer (2017-2018)
+                        </li>
+                        <li class="highlight-background">
+                          Obtained Taiwan Anesthesiology and Pain Medicine Board
+                          Certifications (2018)
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="date">2018-2024</span>
+                      <h4>Professional Practice</h4>
+                      <ul>
+                        <li class="highlight-background">
+                          Attending Anesthesiologist at E-Da Hospital
+                          (2018-2019)
+                        </li>
+                        <li class="highlight-background">
+                          Certified in Taiwan as a Pain Medicine Specialist
+                          (2019)
+                        </li>
+                        <li>
+                          Established weight management program at
+                          "SlenderFigure Clinic" (2019-2024)
+                        </li>
+                        <li>
+                          Treated over 3,000 patients annually with metabolic
+                          syndrome, obesity, and related conditions, while also
+                          focusing on preventive medicine to manage
+                          hypertension, diabetes, and other chronic diseases
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="cs" class="timeline-section">
+                <h3>Computer Science and Interdisciplinary Learning</h3>
+                <div class="timeline">
+                  <div class="timeline-items">
+                    <!-- Timeline items in chronological order -->
+                    <div class="timeline-item">
+                      <span class="date">2018-2021</span>
+                      <h4>Initial Steps in Tech</h4>
+                      <ul>
+                        <li>
+                          Authorized by Dr. Liu Yanqing, the then
+                          Editor-in-Chief of Taiwan Pain Journal: Assisted in
+                          completing the initial digital version of the
+                          <a
+                            href="https://tbs.pain.org.tw/"
+                            class="taiwan-pain-link"
+                            target="_blank"
+                            rel="noopener"
+                            >Taiwan Pain Journal</a
+                          >
+                          (2018)
+                        </li>
+                        <li>
+                          Completed a 3-month AI seminar: Manager training
+                          program in Southern Taiwan, and collaborated with data
+                          scientists and product managers to propose a draft of
+                          a medical device product aimed at predicting the need
+                          for intubation based on changes in respiratory rate,
+                          with recommendations for early intervention (2019)
+                        </li>
+                        <li>
+                          Studied data analytics at National Sun Yat-sen
+                          University, using R (2020-2021)
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="date">2022-2023</span>
+                      <h4>Academic Preparation</h4>
+                      <ul>
+                        <li>
+                          Completed C programming at National Taipei University
+                          of Technology (2022)
+                        </li>
+                        <li>
+                          Studied linear algebra at National Yang Ming Chiao
+                          Tung University（2022)
+                        </li>
+                        <li>Achieved GRE score of 322 (Q:167, V:155) (2022)</li>
+                        <li>
+                          Self-studied Data Structures and Algorithms (2023)
+                        </li>
+                        <li>Completed IELTS exam, score of 7.5 (2023)</li>
+                      </ul>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="date">2023-Present</span>
+                      <h4>Further Steps and Follow-up Preparation</h4>
+                      <ul>
+                        <li class="highlight-background">
+                          Accepted into Align MSCS program of Northeastern
+                          University, enrolled in Fall 2024
+                        </li>
+                        <li>
+                          Learning HTML, CSS, and Git through freeCodeCamp
+                        </li>
+                        <li>
+                          Planning personal projects and international
+                          internships
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="international" class="timeline-section">
+                <h3>International Travel</h3>
+                <div class="timeline">
+                  <div class="timeline-items">
+                    <!-- Timeline items in chronological order -->
+                    <div class="timeline-item">
+                      <span class="date">2007</span>
+                      <h4>European Exploration</h4>
+                      <ul>
+                        <li>
+                          Solo backpacking trip to Germany and Switzerland
+                        </li>
+                        <li>
+                          Visited Munich, Zugspitze, Bamberg, Cologne,
+                          Heidelberg, Bern, and Zurich
+                        </li>
+                        <li>
+                          Developed deep appreciation for European cultural
+                          heritage
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="date">2010-2012</span>
+                      <h4>Asia-Pacific Adventures</h4>
+                      <ul>
+                        <li>Self-guided trip to Singapore and Australia</li>
+                        <li>
+                          Participated in Global Citizen Island travel project
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="date">2018-2020</span>
+                      <h4>Winter Sports Journey</h4>
+                      <ul>
+                        <li>First skiing experience in Furano, Hokkaido</li>
+                        <li>Advanced skiing lessons in Naeba, Tokyo</li>
+                        <li>
+                          Further skiing practice at Sahoro Resort, Hokkaido
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="engagement" class="timeline-section">
+                <h3>Personal Branding and Public Engagement</h3>
+                <div class="timeline">
+                  <div class="timeline-items">
+                    <!-- Timeline items in chronological order -->
+                    <div class="timeline-item">
+                      <span class="date">2011-2018</span>
+                      <h4>Early Publications and Devotion</h4>
+                      <ul>
+                        <li>
+                          Contributed medical articles to Crown Culture Magazine
+                          (2011-2013)
+                        </li>
+                        <li>Focused on patient care and medical humanities</li>
+                      </ul>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="date">2018-2021</span>
+                      <h4>Digital Presence</h4>
+                      <ul>
+                        <li>Launched personal blog (44,000+ views)</li>
+                        <li>
+                          Established Facebook page "Dr.YanboChen<span
+                            lang="zh-TW"
+                            >陳彥伯</span
+                          >"
+                        </li>
+                        <li>Researched CAR-T immunotherapy applications</li>
+                      </ul>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="date">2021-2022</span>
+                      <h4>Media Appearances</h4>
+                      <ul>
+                        <li>Featured on Minshi TV's Medical Alliance</li>
+                        <li>
+                          Contributed as a guest on EBC Finance's Yu Meets New
+                          Classmates, discussing health and wellness topics
+                          related to weight management.
+                        </li>
+                        <li>
+                          Shared expertise on health and wellness on
+                          Nutritionist Light Meals podcast, one of Taiwan's most
+                          reputable and well-known nutrition and health
+                          supplement companies, and with the Taiwan Cancer
+                          Foundation
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- if content is long, add a "read more" anchor link -->
+      <section id="details">
+        <!-- more details -->
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 All rights reserved</p>
+      <div class="social-links">
+        <!-- Add your GitHub profile link here -->
+        <a
+          href="https://github.com/YanBoChen0928"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <!-- Add your Northeastern email here -->
+        <a href="mailto:chen.yanbo@northeastern.edu">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <p class="photo-credit">
+        Photo by
+        <a
+          href="https://unsplash.com/@leecampbell?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          target="_blank"
+          rel="noopener"
+          >Lee Campbell</a
+        >
+        on
+        <a
+          href="https://unsplash.com/photos/silver-imac-turned-on-inside-room-DtDlVpy-vvQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          target="_blank"
+          rel="noopener"
+          >Unsplash</a
+        >
+      </p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

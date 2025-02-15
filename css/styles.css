@@ -1,0 +1,826 @@
+/* 1. Basic reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #efe6dd; /* Light background */
+  font-family: "Open Sans", "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+[lang="zh-TW"] {
+  font-family: "Noto Sans HK", serif;
+}
+
+.text-wrapper {
+  max-width: calc(1200px - 200px);
+  width: 80vw; /* 80% of viewport width */
+  margin: 0 auto; /* Center the text */
+  position: relative;
+  z-index: 1; /* Ensure text is above the background */
+  padding: 0 3rem; /* Add padding here instead */
+}
+
+.about-content {
+  position: relative;
+  overflow: hidden; /*ensure the pseudo-element does not exceed the boundary*/
+}
+
+.about-content::before,
+.education-section::before,
+.hobbies-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/education-background.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.about-content::before {
+  background-image: url("../images/About-me-background.jpg");
+  opacity: 0.2;
+  filter: blur(1px) brightness(0.8) contrast(2);
+}
+
+.hobbies-section::before {
+  background-image: url("../images/hobbies-background.jpg");
+  filter: blur(2px);
+}
+
+/* 2. Layout styles */
+/* Left side navigation */
+header {
+  width: 200px;
+  background-color: #001f3f; /* Deep indigo blue */
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+nav {
+  padding-bottom: 100px;
+  text-align: center; /* Center navigation text */
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+  display: block; /* Make entire area clickable */
+  padding: 8px 0; /* Increase clickable area */
+}
+
+nav ul li a:hover {
+  color: #c49d5d; /* Keep existing gold text color */
+  background-color: rgba(196, 157, 93, 0.15); /* Subtle gold background */
+}
+
+/* Main content area */
+main {
+  margin-left: 200px;
+  padding: 1.5rem;
+  flex-grow: 1;
+  background-color: #ffffff; /* Pure white background */
+  min-height: 100vh; /* Ensure main content takes full height */
+  position: relative; /* Add this */
+  z-index: 1; /* Add this to ensure main content stays above header in mobile */
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  background-color: #001f3f; /* Match header color */
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+footer p {
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  color: #ffffff; /* Text color: White */
+}
+
+/* Photo credit styles */
+.photo-credit {
+  font-size: 0.5rem !important; /* Override the footer p font-size */
+  color: white !important; /* Make it more visible */
+  margin-top: 1rem;
+}
+
+.photo-credit a {
+  color: rgba(241, 201, 136, 0.7) !important; /* Match text color */
+  text-decoration: underline;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #ffffff; /* Icon color: White */
+  font-size: 1.5em;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.social-links a:hover {
+  color: #7fa99b; /* Accent 3: Muted Blue-Green for hover */
+  transform: scale(1.1);
+}
+
+/* Headings */
+h1 {
+  color: #001f3f; /* Match primary color */
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #c49d5d;
+}
+
+/* Visited link color */
+nav ul li a:visited {
+  color: #efe6dd;
+}
+
+/* Profile image section */
+.profile-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%; /* Full width of container */
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+/* Profile image styling */
+.profile-image img {
+  width: auto; /* Let the image determine its width */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 400px; /* Maximum width for desktop */
+  max-height: 400px; /* Maximum height for desktop */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: contain; /* Ensures image fits without cropping */
+}
+
+.profile-image figcaption {
+  text-align: left;
+  margin-top: 1.5rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.6;
+  padding: 0 1rem;
+  max-width: 600px; /* Limit the width of caption text */
+}
+
+/* Hamburger menu icon */
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 15px 20px;
+  text-align: right;
+}
+
+/* 4. Content area styles */
+.about-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.about-content h2 {
+  color: #001f3f;
+  margin: 1rem 0 1.5rem;
+  font-size: 1.8em;
+}
+
+.about-text {
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+/* Timeline Navigation - Horizontal layout */
+.timeline-nav {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  width: 100%;
+  margin-bottom: 2rem;
+  flex-wrap: nowrap; /* Keep items in one line */
+  gap: 10px; /* Space between items */
+}
+
+.timeline-nav a {
+  color: #001f3f;
+  text-decoration: none;
+  padding: 8px 12px; /* Reduced padding for better fit */
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-size: 0.9em; /* Slightly smaller font */
+  flex: 1; /* Equal width distribution */
+  text-align: center;
+}
+
+/* Active state - keep original dark blue */
+.timeline-nav a.active {
+  background-color: #001f3f;
+  color: white;
+}
+
+/* Hover state - show gold color (only when not active) */
+.timeline-nav a:not(.active):hover {
+  background-color: rgba(196, 157, 93, 0.2); /* golden transparent */
+  color: #001f3f;
+  box-shadow: 0 2px 4px rgba(196, 157, 93, 0.1);
+}
+
+/* Timeline Section with reverse order */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Vertical line for timeline */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #001f3f;
+}
+
+/* Timeline items container */
+.timeline .timeline-items {
+  display: flex;
+  flex-direction: column-reverse; /* This will reverse the order of items */
+}
+
+/* Timeline item and dots */
+.timeline-item {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 31, 63, 0.1);
+  position: relative;
+}
+
+/* Timeline dots */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -2.4rem;
+  top: 1.8rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #001f3f;
+  border: 2px solid white;
+}
+
+/* Hide Chrome scrollbar */
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+
+/* Base styles for scroll indicator - Desktop version */
+.timeline::after {
+  content: "Scroll for more";
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 20px;
+  background: rgba(175, 237, 240, 0.95);
+  color: #001f3f;
+  font-size: 0.7em;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 15px rgba(175, 237, 240, 0.5); /* Added shadow with transparency */
+}
+
+/* Show scroll indicator when content overflows */
+.timeline.has-overflow::after {
+  opacity: 1;
+}
+
+/* Timeline content styling */
+.timeline-item h4 {
+  color: #001f3f;
+  margin-bottom: 1rem;
+}
+
+/* Timeline content styling */
+.timeline-item ul {
+  margin-left: 1.2rem;
+  line-height: 1.6;
+  list-style-type: disc !important; /* Force bullet points */
+}
+
+.timeline-item ul li {
+  margin-bottom: 0.5rem;
+  color: #333;
+  padding-left: 0.5rem;
+  display: list-item !important; /* Force list item display */
+  list-style-position: outside; /* Keep bullets outside */
+}
+
+a.taiwan-pain-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+a.taiwan-pain-link:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.taiwan-pain-link:visited {
+  color: rgba(196, 157, 93, 0.2);
+}
+
+/* PC */
+li.highlight-background {
+  background-color: rgba(196, 157, 93, 0.2);
+  color: #001f3f;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 2px 0;
+  border: 1px solid rgba(196, 157, 93, 0.3);
+  box-shadow: 0 2px 4px rgba(196, 157, 93, 0.1);
+  list-style-position: inside;
+}
+
+.timeline-item .date {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  color: #001f3f;
+  margin: 1rem 0 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* University Information Section - Education page */
+.University-info {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Logo and info side by side */
+  gap: 1.2rem;
+  align-items: start;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1.2rem;
+  border-radius: 5px;
+}
+
+/* University Logo */
+.NEU-logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.NEU-logo:hover {
+  transform: scale(1.02);
+}
+
+/* University Information */
+.NEU-info {
+  padding: 1rem 0;
+}
+
+.NEU-info h2 {
+  color: #001f3f;
+  font-size: 1.6em;
+  margin-bottom: 1rem;
+}
+
+.NEU-info p {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+}
+
+/* Course Lists */
+.University-info h3 {
+  color: #001f3f;
+  font-size: 1.4em;
+  margin: 1rem 0 0.5rem;
+  grid-column: 1 / -1; /* Span full width */
+}
+
+.courses-list {
+  list-style-type: disc;
+  margin-left: 1.2rem;
+  line-height: 1.6;
+  grid-column: 1 / -1; /* Span full width */
+}
+
+.courses-list li {
+  color: #333;
+  margin-bottom: 0.8rem;
+  padding-left: 0.5rem;
+}
+
+/* Hobbies Section Styles */
+.hobbies-section {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0; /* Remove horizontal padding */
+  overflow: visible;
+}
+
+.hobbies-section h2 {
+  color: #001f3f;
+  margin-bottom: 2rem;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.hobbies-list {
+  width: 100%;
+  list-style: none;
+  counter-reset: hobbies-counter;
+  padding: 0;
+  margin: 0;
+}
+
+.hobbies-list li {
+  background: white;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 31, 63, 0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  counter-increment: hobbies-counter;
+  margin-left: 40px; /* Add margin for number positioning */
+}
+
+.hobbies-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 31, 63, 0.2);
+}
+
+.hobbies-list li::before {
+  content: counter(hobbies-counter) ".";
+  position: absolute;
+  left: -40px;
+  top: 1.5rem;
+  width: 30px;
+  height: 30px;
+  background: #001f3f;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.hobbies-list h3 {
+  color: #001f3f;
+  margin-bottom: 1rem;
+  font-size: 1.4em;
+}
+
+.hobbies-list p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.hobbies-list li p {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: rgba(239, 230, 221, 0.3);
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.hobbies-list li p:hover {
+  transform: translateX(5px);
+}
+
+.hobbies-list li p strong {
+  color: #001f3f;
+  display: inline-block;
+  margin-right: 0.3rem;
+}
+
+/* Background pseudo-element */
+.hobbies-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/hobbies-background.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* 7. Responsive Design - All media queries */
+@media screen and (max-width: 768px) {
+  /* Layout responsive */
+  body {
+    flex-direction: column;
+  }
+
+  /* Header responsive */
+  header {
+    width: 100%;
+    height: auto;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 0;
+    background-color: #001f3f;
+  }
+
+  /* Navigation responsive */
+  nav {
+    display: none;
+    padding-bottom: 1rem;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  nav.active {
+    display: block;
+    background-color: #001f3f;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    height: auto; /* Adjusted height by the content */
+  }
+
+  nav.active:hover {
+    /*only active and hover */
+    display: block;
+    background-color: #a7c7e7; /* light blue */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+
+  nav ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  nav ul li a {
+    padding: 12px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* for the last item add bottom border */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+    padding-top: 20px; /* adequate space for the header */
+  }
+
+  .highlight-background {
+    background-color: #f4e04d;
+    color: #1f2a44;
+    padding: 0.1rem;
+    border-radius: 5px;
+  }
+
+  footer {
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+  }
+
+  .photo-credit {
+    margin-top: 0.5rem;
+  }
+
+  .profile-image {
+    padding: 0 10px;
+  }
+
+  .profile-image img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  /* Timeline responsive */
+  .timeline-nav {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .timeline-nav a {
+    font-size: 0.85em;
+    padding: 6px 10px;
+    min-width: 120px; /* Minimum width for better touch targets */
+  }
+
+  /* University responsive */
+  .University-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .NEU-logo {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .NEU-info {
+    padding: 1rem 0;
+  }
+
+  .NEU-info h2 {
+    font-size: 1.6em;
+  }
+
+  .courses-list {
+    margin-left: 2rem;
+  }
+
+  .timeline::after {
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.8em;
+    padding: 6px 12px;
+    background: rgba(0, 31, 63, 0.9);
+    color: #fff;
+  }
+
+  .hobbies-list li {
+    margin-left: 40px;
+  }
+
+  .hobbies-list li::before {
+    left: -35px;
+    width: 25px;
+    height: 25px;
+    font-size: 0.9em;
+  }
+
+  .hobbies-list li p {
+    margin-left: 40px;
+  }
+
+  .text-wrapper {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .profile-image {
+    padding: 0 5px;
+  }
+
+  .profile-image img {
+    max-width: 250px; /* Even smaller for phones */
+    max-height: 250px;
+  }
+
+  .profile-image figcaption {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .University-info {
+    padding: 0.5rem;
+  }
+
+  .NEU-logo {
+    max-width: 200px;
+  }
+
+  .NEU-info h2 {
+    font-size: 1.4em;
+  }
+
+  .courses-list {
+    margin-left: 1rem;
+    font-size: 0.9em;
+  }
+
+  .timeline-nav {
+    flex-direction: column; /* Stack vertically on very small screens */
+    align-items: center;
+  }
+
+  .timeline-nav a {
+    width: 100%;
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+
+  .hobbies-section {
+    padding: 0 10px;
+  }
+
+  .hobbies-list li {
+    padding: 1rem;
+    margin-left: 30px;
+  }
+
+  .hobbies-list li::before {
+    left: -30px;
+    width: 22px;
+    height: 22px;
+    font-size: 0.8em;
+  }
+
+  .hobbies-list li p {
+    margin-left: 30px;
+  }
+
+  .text-wrapper {
+    padding: 0 1rem;
+  }
+}
