@@ -1,85 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Education - My Portfolio</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <script src="https://kit.fontawesome.com/09c15b7369.js" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/09c15b7369.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon-16x16.png"
+    />
     <!-- 
       Web App Manifest - for PWA functionality
       Enable this when website needs to be installed as a mobile app
     -->
     <!-- <link rel="manifest" href="../images/site.webmanifest"> -->
-</head>
-<body class="education-page">
-    <header>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
+  </head>
+  <body class="education-page">
+    <div class="control-panel">
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+      
+      <div class="date-time-container">
+        <div class="radio-group">
+          <input type="radio" id="date-radio" name="date-time" value="date" checked>
+          <label for="date-radio">Date</label>
+          <input type="radio" id="time-radio" name="date-time" value="time">
+          <label for="time-radio">Time</label>
         </div>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="hobbies.html">Hobbies</a></li>
-            </ul>
-        </nav>
+        <button id="date-time-button" class="theme-toggle-btn">
+          <i class="fas fa-clock"></i>
+          <span>Display Date/Time</span>
+        </button>
+        <p id="date-time-output"></p>
+      </div>
+    </div>
+
+    <header>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <h1>Education</h1>
-        <section class="education-section">
-            <div class="text-wrapper">
-            <section class="University-info">
-                <a href="https://www.northeastern.edu" target="_blank" rel="noopener noreferrer">
-                    <img src="../images/NEU_logo.svg" 
-                        alt="Northeastern University Logo" 
-                        class="NEU-logo">
-                </a>
-                <div class="NEU-info">
-                    <h2>Master of Science in Computer Science</h2>
-                    <p>Align Program - Fall 2024</p>
-                </div>
-                <h3>Bridge Courses</h3>
-                <ul class="courses-list">
-                    <li>CS 5001 - Intensive Foundations of Computer Science</li>
-                    <li>CS 5002 - Discrete and Data Structures</li>
-                    <li>CS 5004 - Object-Oriented Design</li>
-                    <li>CS 5008 - Data Structures, Algorithms, and Their Applications</li>
-                </ul>
-                <h3>Core Courses</h3>
-                <ul class="courses-list">
-                    <li>CS 5800 - Algorithms</li>
-                </ul>
-                
-                <h3>Elective Courses</h3>
-                <ul class="courses-list">
-                    <li>CS 5610 - Web Development</li>
-                    <li>CS 5200 - Database Management Systems</li>
-                </ul>
-            </section>
+      <h1>Education</h1>
+      <section class="education-section">
+        <div class="text-wrapper">
+          <section class="University-info">
+            <a
+              href="https://www.northeastern.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../images/NEU_logo.svg"
+                alt="Northeastern University Logo"
+                class="NEU-logo"
+              />
+            </a>
+            <div class="NEU-info">
+              <h2>Master of Science in Computer Science</h2>
+              <p>Align Program - Fall 2024</p>
             </div>
-        </section>
+            <h3>Bridge Courses</h3>
+            <ul class="courses-list">
+              <li>CS 5001 - Intensive Foundations of Computer Science</li>
+              <li>CS 5002 - Discrete and Data Structures</li>
+              <li>CS 5004 - Object-Oriented Design</li>
+              <li>
+                CS 5008 - Data Structures, Algorithms, and Their Applications
+              </li>
+            </ul>
+            <h3>Core Courses</h3>
+            <ul class="courses-list">
+              <li>CS 5800 - Algorithms</li>
+            </ul>
+
+            <h3>Elective Courses</h3>
+            <ul class="courses-list">
+              <li>CS 5610 - Web Development</li>
+              <li>CS 5200 - Database Management Systems</li>
+            </ul>
+          </section>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 All rights reserved</p>
-        <div class="social-links">
-            <a href="YOUR_GITHUB_PROFILE_URL" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:YOUR_NORTHEASTERN_EMAIL">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-        <p class="photo-credit">
-        Photo by <a href="https://unsplash.com/@itfeelslikefilm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener">🇸🇮 Janko Ferlič</a> 
-        on <a href="https://unsplash.com/photos/photo-of-library-with-turned-on-lights-sfL_QOnmy00?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener">Unsplash</a>
-        </p>
+      <p>&copy; 2025 All rights reserved</p>
+      <div class="social-links">
+        <a
+          href="YOUR_GITHUB_PROFILE_URL"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:YOUR_NORTHEASTERN_EMAIL">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <p class="photo-credit">
+        <span class="first-line">Background Image: Photo by<br /></span>
+        <span class="second-line">
+          <a
+            href="https://unsplash.com/@itfeelslikefilm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            rel="noopener"
+            >🇸🇮 Janko Ferlič</a
+          >
+          on
+          <a
+            href="https://unsplash.com/photos/photo-of-library-with-turned-on-lights-sfL_QOnmy00?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            rel="noopener"
+            >Unsplash</a
+          >
+        </span>
+      </p>
     </footer>
     <script src="../js/script.js"></script>
-</body>
+  </body>
 </html>

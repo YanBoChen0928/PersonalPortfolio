@@ -1,0 +1,65 @@
+.All content is center-aligned in the viewport.
+
+.Navigation items are laid out horizontally using flexbox, with equal spacing before the first item, between items, and after the last item.
+
+.The header is styled with a different background color than the navigation bar and sticks to the top of the browser as the user scrolls
+
+*.The grid layout is used to move the Northeastern logo to the right on education.htm
+
+.A button with id="theme-toggle" is added to the header, positioned at the top-right.
+
+.The text on the toggle button reflects the current theme
+
+.The page's styling is controlled via the dark-theme class
+
+.the selected theme is saved in localStorage and is retained when the page is reloaded
+
+.The CSS for dark themes is separated by a class, and not hardcoded within JavaScript.
+
+.Toggling this class changes the theme
+
+.Two radio buttons are added, with "Date" selected by default.
+
+.A button (id="date-time-button") triggers the display of the current date or time in a paragraph (id="date-time-output").
+
+.Date format is "Mon, Feb 1, 2025" and time format is "08:10:56 PM."
+
+.Clean Code Practices:
+Code is well-organized and follows best practices for readability.
+Functions are single-purpose.
+Variable names are meaningful and clear
+
+
+--- 2025.02.15--- (check and inconsistent)
+
+让我帮您检查不带 * 开头的 rubric 项目：
+"Navigation items are laid out horizontally using flexbox, with equal spacing before the first item, between items, and after the last item."
+检查结果：不完全符合。目前的导航是垂直布局的，在左侧边栏中。
+2. "The header is styled with a different background color than the navigation bar and sticks to the top of the browser as the user scrolls"
+检查结果：部分符合。header 确实有不同的背景色（header 是 #001f3f，nav 是 #2c3e50），但在桌面版本中是固定在左侧而不是顶部。只有在移动版本中才会固定在顶部。
+"A button with id="theme-toggle" is added to the header, positioned at the top-right."
+检查结果：不完全符合。按钮确实存在且 ID 正确，但它不在 header 中，而是在单独的 control-panel div 中。
+"The text on the toggle button reflects the current theme"
+检查结果：符合。通过 JavaScript 实现了主题切换时文本的更新。
+"The page's styling is controlled via the dark-theme class"
+检查结果：符合。使用 dark-theme 类来控制暗色主题样式。
+"the selected theme is saved in localStorage and is retained when the page is reloaded"
+检查结果：符合。使用 localStorage 保存和加载主题设置。
+"The CSS for dark themes is separated by a class, and not hardcoded within JavaScript."
+检查结果：符合。所有暗色主题的样式都在 CSS 中通过 .dark-theme 类定义。
+"Toggling this class changes the theme"
+检查结果：符合。通过切换 dark-theme 类来改变主题。
+"Two radio buttons are added, with "Date" selected by default."
+检查结果：符合。已添加两个单选按钮，且 Date 默认选中。
+"A button (id="date-time-button") triggers the display of the current date or time in a paragraph (id="date-time-output")."
+检查结果：符合。按钮和输出段落都存在且 ID 正确。
+"Date format is "Mon, Feb 1, 2025" and time format is "08:10:56 PM.""
+检查结果：符合。日期和时间格式正确。
+"Clean Code Practices:"
+代码组织良好：符合
+函数单一职责：符合
+变量名有意义且清晰：符合
+需要修改的主要项目：
+导航栏的布局需要改为水平布局
+主题切换按钮需要移到 header 中
+header 在桌面版本也需要固定在顶部

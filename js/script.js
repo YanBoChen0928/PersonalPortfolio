@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial scroll to top for the default visible timeline
     scrollTimelinesToTop();
 
-    // 只保留時間軸展開的處理
+    // Handle timeline expansion only
     const timelines = document.querySelectorAll('.timeline');
     
     const handleScroll = (entries) => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(timeline);
     });
 
-    // 添加滾動監聽
+    // Add scroll listener
     let scrollTimeout;
     window.addEventListener('scroll', () => {
         clearTimeout(scrollTimeout);
@@ -132,4 +132,86 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Date/Time Display functionality
+    const dateTimeBtn = document.getElementById('date-time-button');
+    const dateTimeOutput = document.getElementById('date-time-output');
+    const dateRadio = document.getElementById('date-radio');
+    
+    // Function to format date as "Mon, Feb 1, 2025"
+    function formatDate(date) {
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        
+        return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    }
+    
+    // Function to format time as "08:10:56 PM"
+    function formatTime(date) {
+        let hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const seconds = date.getSeconds().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Convert 0 to 12
+        hours = hours.toString().padStart(2, '0');
+        
+        return `${hours}:${minutes}:${seconds} ${ampm}`;
+    }
+    
+    // Function to update date/time display
+    function updateDateTime() {
+        const now = new Date();
+        dateTimeOutput.style.display = 'block'; // 显示输出段落
+        if (dateRadio.checked) {
+            dateTimeOutput.textContent = formatDate(now);
+        } else {
+            dateTimeOutput.textContent = formatTime(now);
+        }
+    }
+    
+    // Add click event listener to the button
+    dateTimeBtn.addEventListener('click', updateDateTime);
+
+    // Theme toggle functionality
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleText = themeToggleBtn.querySelector('span');
+    const themeToggleIcon = themeToggleBtn.querySelector('i');
+
+    // Function to apply theme
+    function applyTheme(isDarkTheme) {
+        // Apply theme to body
+        document.body.classList.toggle('dark-theme', isDarkTheme);
+        
+        // Update button text and icon
+        themeToggleText.textContent = isDarkTheme ? 'Light Mode' : 'Dark Mode';
+        themeToggleIcon.classList.remove(isDarkTheme ? 'fa-moon' : 'fa-sun');
+        themeToggleIcon.classList.add(isDarkTheme ? 'fa-sun' : 'fa-moon');
+    }
+
+    // Function to toggle theme
+    function toggleTheme() {
+        const isDarkTheme = !document.body.classList.contains('dark-theme');
+        
+        // Apply the theme
+        applyTheme(isDarkTheme);
+        
+        // Save theme preference to localStorage
+        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+    }
+
+    // Load saved theme preference
+    function loadSavedTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme === 'dark');
+        }
+    }
+
+    // Load theme when page loads
+    loadSavedTheme();
+
+    // Add click event listener
+    themeToggleBtn.addEventListener('click', toggleTheme);
 }); 

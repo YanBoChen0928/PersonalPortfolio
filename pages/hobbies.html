@@ -33,6 +33,27 @@
     <!-- <link rel="manifest" href="../images/site.webmanifest" /> -->
   </head>
   <body class="hobbies-page">
+    <div class="control-panel">
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+      
+      <div class="date-time-container">
+        <div class="radio-group">
+          <input type="radio" id="date-radio" name="date-time" value="date" checked>
+          <label for="date-radio">Date</label>
+          <input type="radio" id="time-radio" name="date-time" value="time">
+          <label for="time-radio">Time</label>
+        </div>
+        <button id="date-time-button" class="theme-toggle-btn">
+          <i class="fas fa-clock"></i>
+          <span>Display Date/Time</span>
+        </button>
+        <p id="date-time-output"></p>
+      </div>
+    </div>
+
     <header>
       <div class="menu-toggle">
         <i class="fas fa-bars"></i>
@@ -60,21 +81,22 @@
                 friends.
               </p>
               <p>
-                <strong>Skiing:</strong> Started skiing in Hokkaido and developed
-                a passion for winter sports. Regular practice at various resorts
-                has helped improve techniques and enjoy the thrill of speed and
-                control.
+                <strong>Skiing:</strong> Started skiing in Hokkaido and
+                developed a passion for winter sports. Regular practice at
+                various resorts has helped improve techniques and enjoy the
+                thrill of speed and control.
               </p>
               <p>
                 <strong>Golf:</strong> Although I don't have much experience on
-                the actual course and have played less recently, I find practicing
-                at the driving range allows me to focus on my muscles.
-                Additionally, swinging the club is very relaxing.
+                the actual course and have played less recently, I find
+                practicing at the driving range allows me to focus on my
+                muscles. Additionally, swinging the club is very relaxing.
               </p>
               <p>
                 <strong>Tai Chi:</strong> Started in college for both health
                 benefits and self-defense training. It combines the beauty and
-                essence of Eastern martial arts while promoting overall wellness.
+                essence of Eastern martial arts while promoting overall
+                wellness.
               </p>
             </li>
             <li>
@@ -99,7 +121,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2024 All rights reserved</p>
+      <p>&copy; 2025 All rights reserved</p>
       <div class="social-links">
         <a
           href="YOUR_GITHUB_PROFILE_URL"
@@ -113,18 +135,22 @@
         </a>
       </div>
       <p class="photo-credit">
-        Photo by
-        <a
-          href="https://unsplash.com/@wistomsin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-          target="_blank" rel="noopener"
-          >Tom Barrett</a
-        >
-        on
-        <a
-          href="https://unsplash.com/photos/airplane-on-sky-during-golden-hour-M0AWNxnLaMw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-          target="_blank" rel="noopener"
-          >Unsplash</a
-        >
+        <span class="first-line">Background Image: Photo by<br /></span>
+        <span class="second-line">
+          <a
+            href="https://unsplash.com/@wistomsin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            rel="noopener"
+            >Tom Barrett</a
+          >
+          on
+          <a
+            href="https://unsplash.com/photos/airplane-on-sky-during-golden-hour-M0AWNxnLaMw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            rel="noopener"
+            >Unsplash</a
+          >
+        </span>
       </p>
     </footer>
     <script src="../js/script.js"></script>

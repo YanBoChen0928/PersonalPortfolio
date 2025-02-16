@@ -33,6 +33,27 @@
     <!-- <link rel="manifest" href="images/site.webmanifest" /> -->
   </head>
   <body class="home-page">
+    <div class="control-panel">
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+      
+      <div class="date-time-container">
+        <div class="radio-group">
+          <input type="radio" id="date-radio" name="date-time" value="date" checked>
+          <label for="date-radio">Date</label>
+          <input type="radio" id="time-radio" name="date-time" value="time">
+          <label for="time-radio">Time</label>
+        </div>
+        <button id="date-time-button" class="theme-toggle-btn">
+          <i class="fas fa-clock"></i>
+          <span>Display Date/Time</span>
+        </button>
+        <p id="date-time-output"></p>
+      </div>
+    </div>
+
     <header>
       <div class="menu-toggle">
         <i class="fas fa-bars"></i>
@@ -345,7 +366,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2024 All rights reserved</p>
+      <p>&copy; 2025 All rights reserved</p>
       <div class="social-links">
         <!-- Add your GitHub profile link here -->
         <a
@@ -361,20 +382,22 @@
         </a>
       </div>
       <p class="photo-credit">
-        Photo by
-        <a
-          href="https://unsplash.com/@leecampbell?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-          target="_blank"
-          rel="noopener"
-          >Lee Campbell</a
-        >
-        on
-        <a
-          href="https://unsplash.com/photos/silver-imac-turned-on-inside-room-DtDlVpy-vvQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-          target="_blank"
-          rel="noopener"
-          >Unsplash</a
-        >
+        <span class="first-line">Background Image: Photo by<br /></span>
+        <span class="second-line">
+          <a
+            href="https://unsplash.com/@leecampbell?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            rel="noopener"
+            >Lee Campbell</a
+          >
+          on
+          <a
+            href="https://unsplash.com/photos/silver-imac-turned-on-inside-room-DtDlVpy-vvQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            target="_blank"
+            rel="noopener"
+            >Unsplash</a
+          >
+        </span>
       </p>
     </footer>
     <script src="js/script.js"></script>

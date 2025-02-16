@@ -78,8 +78,11 @@ header {
 }
 
 nav {
-  padding-bottom: 100px;
   text-align: center; /* Center navigation text */
+  height: auto;
+  background-color: #2c3e50;
+  border-radius: 10px; /* Rounded left corners */
+  padding: 10px;
 }
 
 nav ul {
@@ -97,6 +100,7 @@ nav ul li a {
   transition: color 0.3s ease;
   display: block; /* Make entire area clickable */
   padding: 8px 0; /* Increase clickable area */
+  border-radius: 10px; /* Rounded corners */
 }
 
 nav ul li a:hover {
@@ -678,6 +682,15 @@ h3 {
   .photo-credit {
     margin-top: 0.5rem;
   }
+  .first-line::after {
+    content: "";
+    display: block;
+  }
+
+  .second-line {
+    display: block; /* Make this part appear on the next line */
+    white-space: nowrap;
+  }
 
   .profile-image {
     padding: 0 10px;
@@ -823,4 +836,149 @@ h3 {
   .text-wrapper {
     padding: 0 1rem;
   }
+}
+
+/* 控制面板容器 */
+.control-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 2px solid #001f3f;
+    background-color: #ffffff;
+    color: #001f3f;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9em;
+    gap: 8px;
+    transition: all 0.3s ease;
+    width: 100%; /* 使用容器的全宽 */
+    justify-content: center; /* 居中对齐 */
+}
+
+/* Date Time Container */
+.date-time-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    width: 200px; /* 固定容器宽度 */
+}
+
+.radio-group {
+    background-color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid #001f3f;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 100%; /* 使用容器的全宽 */
+    justify-content: center; /* 居中对齐 */
+}
+
+.radio-group label {
+    color: #001f3f;
+    cursor: pointer;
+}
+
+#date-time-button {
+    width: 100%;
+}
+
+#date-time-output {
+    display: none;
+    margin: 0;
+    padding: 8px 15px;
+    background-color: #ffffff;
+    border: 2px solid #001f3f;
+    border-radius: 20px;
+    color: #001f3f;
+    width: 100%; /* 使用容器的全宽 */
+    text-align: center;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme main {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4 {
+    color: #c49d5d;
+}
+
+/* Dark theme styles for buttons and containers */
+.dark-theme .theme-toggle-btn,
+.dark-theme .radio-group,
+.dark-theme #date-time-output {
+    width: 100%;
+    background-color: #333;
+    border-color: #c49d5d;
+    color: #e0e0e0;
+}
+
+.dark-theme .radio-group label {
+    color: #e0e0e0;
+}
+
+.dark-theme .theme-toggle-btn:hover {
+    background-color: #c49d5d;
+    color: #1a1a1a;
+}
+
+/* Dark theme styles for education page */
+.dark-theme .education-section {
+    color: #e0e0e0;
+}
+
+.dark-theme .University-info {
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .courses-list li {
+    color: #e0e0e0;
+}
+
+.dark-theme .NEU-info p {
+    color: #c49d5d;
+}
+
+/* Dark theme styles for hobbies page */
+.dark-theme .hobbies-section {
+    color: #e0e0e0;
+}
+
+.dark-theme .hobbies-list li {
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .hobbies-list li p {
+    background-color: rgba(196, 157, 93, 0.1);
+    color: #e0e0e0;
+}
+
+.dark-theme .hobbies-list li p strong {
+    color: #c49d5d;
 }
